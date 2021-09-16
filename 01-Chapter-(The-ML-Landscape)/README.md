@@ -4,19 +4,15 @@
 ## Exercises :
 
 - #### **1) How would you define Machine Learning? (P04)**
-
-    > Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed.
-    > - *Arthur Samuel, 1959*
-    
-    > A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
-    > - *Tom Mitchell, 1997*
+    - Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed. - *Arthur Samuel, 1959*
+    - A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E. - *Tom Mitchell, 1997*
     
 - #### **2) Can you name four types of problems where it shines? (P07)**
 
-1) Problems for which existing solutions require a lot of hand-tuning or long lists of rules: one Machine Learning Algorithm can often simplify code and perform better.
-2) Complex problems for which there is no good solution using a traditional approach: the best Machine Learning techniques can find a solution.
-3) Fluctuating environments: a Machine Learning system can adapt to new data.
-4) Getting insights about complex and large amounts of data.
+    1) Problems for which existing solutions require a lot of hand-tuning or long lists of rules: one Machine Learning Algorithm can often simplify code and perform better.
+    2) Complex problems for which there is no good solution using a traditional approach: the best Machine Learning techniques can find a solution.
+    3) Fluctuating environments: a Machine Learning system can adapt to new data.
+    4) Getting insights about complex and large amounts of data.
 
 - #### **3) What is a labeled training set? (P08)**
 
@@ -90,7 +86,7 @@
 - #### **15) If your model performs great on the training data but generalizes poorly to new instances, what is happening? Can you name three possible solutions? (P29)**
 
     This is the case of Overfitting (described above) and here are three solutions for the same :
-    
+
     1) To simplify the model by selecting one with fewer parameters, by reducing the number of attributes in the training data or by constraining the model. (Regularization)
     2) To gather more training data.
     3) To reduce the noise in the training data. (Data cleaning)
