@@ -23,11 +23,31 @@
 
     For manipulating the image instances, we use Scipy's [ndimage library](https://docs.scipy.org/doc/scipy/reference/ndimage.html) which allows us to perform multi-dimensional image processing. Here, we import the 'shift' method and use it to move the digits to the respective directions.
 
-    [IMAGE OF THE AUGMENTED INSTANCES]
+    ![IMAGE OF THE AUGMENTED INSTANCES](https://i.imgur.com/BYsqgJul.png)
   
     ```python
-    ...
     X_train_augmented = [image for image in X_train]
     y_train_augmented = [label for label in y_train]
-    ...
+    
+    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+    for image, label in zip(X_train, y_train):
+        X_train_augmented.append(shift_image(image, dx, dy))
+        y_train_augmented.append(label)
+
+    X_train_augmented = np.array(X_train_augmented)
+    y_train_augmented = np.array(y_train_augmented)
+    
+    shuffle_idx = np.random.permutation(len(X_train_augmented))
+    X_train_augmented = X_train_augmented[shuffle_idx]
+    y_train_augmented = y_train_augmented[shuffle_idx]
     ```
+    
+    ```python
+    knn_clf = KNeighborsClassifier(**grid_search.best_params_)
+    knn_clf.fit(X_train_augmented, y_train_augmented)
+    y_pred = knn_clf.predict(X_test)
+    accuracy_score(y_test, y_pred)
+    ```
+    * Since we did not run the GridSearch earlier, we are simulating the results.
+    * KNeighborsClassifier(n_neighbors=4, weights='distance')
+    * Accuracy = 0.9763
